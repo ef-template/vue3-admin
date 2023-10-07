@@ -1,0 +1,66 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-essential",
+    "@unocss",
+    ".eslintrc-auto-import.json",
+    // prettier顺序很重要，会覆盖前面的规则
+    // prettier eslint 冲突问题参见文章：https://cloud.tencent.com/developer/article/1840432
+    // "prettier/@typescript-eslint" has been merged into "prettier" in eslint-config-prettier 8.0.0.
+    //  https://github.com/prettier/eslint-config-prettier/blob/main/CHANGELOG.md#version-800-2021-02-21
+    // "prettier/@typescript-eslint"
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "vue",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    // 关闭eslint格式化规则，使用prettier插件,否则它们容易打架。
+    // "indent": [
+    //   "error",
+    //   2
+    // ],
+    // "linebreak-style": [
+    //   "error",
+    //   "windows" // unix windows
+    // ],
+    // "quotes": [
+    //   "error",
+    //   "double"
+    // ],
+    // "semi": [
+    //   "error",
+    //   "always"
+    // ],
+    // "no-unused-vars": [
+    //   "error",
+    //   {
+    //     "varsIgnorePattern": "^_"
+    //   }
+    // ],
+    // "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    // 允许使用any类型
+    "@typescript-eslint/no-explicit-any": "off"
+  }
+}

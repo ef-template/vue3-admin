@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+
+
+echo
+echo "=> Executing lint:fix loading..."
+
+pnpm run lint:fix || {
+  exit
+  echo "=> Error npm run lint:fix"
+  exit 1
+}
+
+echo
+echo "=> Executing submit repaired files..."
+
+git add . || {
+  exit
+  echo "=> Error git add ."
+  exit 1
+}
+
+echo
+
+
