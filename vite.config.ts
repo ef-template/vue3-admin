@@ -18,7 +18,7 @@ import qiankun from "vite-plugin-qiankun";
 import compressPlugin from "vite-plugin-compression";
 // 构建产物分析
 import { visualizer } from "rollup-plugin-visualizer";
-// import manualChunks from "./.build/manualChunks";
+import manualChunks from "./.build/manualChunks";
 
 // import { ViteEnv } from "./types/env";
 
@@ -61,7 +61,7 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
     build: {
       rollupOptions: {
         output: {
-          // manualChunks, // 还存在问题
+          manualChunks,
         },
       },
       // 生产环境移除console,debugger(需要先安装npm i -D terser),但是比Esbuild（默认）慢20-40倍，不建议

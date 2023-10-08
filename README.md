@@ -1,5 +1,8 @@
 # 项目简介
-一心堂后台通用模板（Vue2.7 + Element2 + Ts + Vite）
+一心堂后台通用模板（Vue3 + Element-Plus + Ts + Vite）
+
+# qiankun微应用名称配置
+修改.env文件VITE_MICROAPPNAME变量，务必和qiankun主应用名称保持一致。
 
 # 环境要求
 node >= 16.20
@@ -26,8 +29,7 @@ pnpm run build
 |-- .husky（commit校验配置）
 |-- .vscode（vscode编辑器配置）
 |-- public
-|   |-- favicon.svg
-|   `-- logo.webp
+|   |-- favicon.ico
 |-- src
 |   |-- api（接口）
 |   |-- components（组件）
@@ -97,13 +99,23 @@ pnpm run build
 3. `pnpm run commit`
 4. git push
 
-# Vue2.7说明
-本项目使用vue2.7版本，注意事项请参照官方文档[https://v2.cn.vuejs.org/v2/guide/migration-vue-2-7.html](https://v2.cn.vuejs.org/v2/guide/migration-vue-2-7.html)
-
-# Element-Ui
-本项目使用element-ui组件库,组件文档：[https://element.eleme.cn/#/zh-CN](https://element.eleme.cn/#/zh-CN)
+# Element-Plus
+本项目使用element-plus组件库,组件文档：[https://element-plus.org/zh-CN/](https://element-plus.org/zh-CN/)
 <br/>
-已使用[vite-plugin-components](https://github.com/antfu/vite-plugin-components)实现组件自动导入，不需使用import导入。
+已使用[vite-plugin-components](https://github.com/antfu/vite-plugin-components)实现组件自动导入（Icon组件除外），不需使用import导入。
+<br/>
+Icon组件示例：（图标集合[https://element-plus.org/zh-CN/component/icon.html#icon-collection](https://element-plus.org/zh-CN/component/icon.html#icon-collection)）
+```html
+<script setup lang="ts">
+  import {  Edit} from "@element-plus/icons-vue";
+</script>
+
+<template>
+  <el-icon :size="20" color="#409EFC">
+    <Edit />
+  </el-icon>
+</template>
+```
 <br/>
 配置详见vite.config.ts
 
@@ -133,8 +145,8 @@ src/layouts目录或者任意子目录中的vue文件自动注册布局。（不
 
 # 组件自动注册插件
 本项目使用[unplugin-auto-import](https://github.com/antfu/unplugin-auto-import)与[vite-plugin-components](https://github.com/antfu/vite-plugin-components)实现组件自动注册，配置详见vite.config.ts
-1. 'vue', 'vue/macros', 'vue-router', '@vueuse/core'已实现API自动注册。
-2. element-ui组件库已实现自动注册。
+1. 'vue', 'vue-router', '@vueuse/core'已实现API自动注册。
+2. element-plus组件库已实现自动注册。
 3. src/components目录或任意子目录下非"_"开始的vue组件已实现自动注册。
 
 # UnoCSS

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { setupLayouts } from "virtual:generated-layouts";
 import generatedRoutes from "virtual:generated-pages";
-import NProgress from "./nprogress-config";
+import NProgress from "./nprogressConfig";
 import { qiankunWindow } from "vite-plugin-qiankun/dist/helper";
 import CONFIG from "@/config";
 

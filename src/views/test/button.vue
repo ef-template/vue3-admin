@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import router from "@/router";
 import { setThemeColor, getThemeColor } from "@/utils";
+
+const router = useRouter();
 
 function testMessage() {
   ElMessage.success("test Message Components");
@@ -194,7 +195,7 @@ onMounted(() => {
       </div>
     </div>
     <div mt-20px>
-      <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
+      <el-button text @click="dialogVisible = true">点击打开 Dialog</el-button>
       <!-- eslint-disable-next-line vue/no-deprecated-v-bind-sync -->
       <el-dialog title="提示" v-model="dialogVisible" width="30%" :before-close="handleClose">
         <span>这是一段信息</span>
@@ -206,12 +207,7 @@ onMounted(() => {
     </div>
     <div mt-20px>
       <el-dropdown>
-        <span class="el-dropdown-link">
-          Dropdown List
-          <el-icon class="el-icon--right">
-            <arrow-down />
-          </el-icon>
-        </span>
+        <span class="el-dropdown-link"> Dropdown List </span>
         <template #dropdown>
           <el-dropdown-menu>
             <el-dropdown-item>Action 1</el-dropdown-item>
@@ -232,7 +228,7 @@ onMounted(() => {
       </el-tabs>
     </div>
     <div mt-20px>
-      <el-button type="text" @click="open">点击打开 Message Box</el-button>
+      <el-button text @click="open">点击打开 Message Box</el-button>
     </div>
     <div mt-20px flex>
       <el-badge :value="12" class="item" mr-20px>

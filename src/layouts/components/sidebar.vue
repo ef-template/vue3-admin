@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { type Ref } from "vue";
-import { type Route } from "vue-router";
+import {type RouteLocationNormalizedLoaded } from 'vue-router';
 
-const route: Route = useRoute();
+const route: RouteLocationNormalizedLoaded = useRoute();
 
 const activeMenu: Ref<string> = ref<string>("");
 
