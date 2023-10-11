@@ -15,6 +15,9 @@ dist
 dist-ssr
 *.local
 stats.html
+auto-imports.d.ts
+.eslintrc-auto-import.json
+components.d.ts
 
 # Editor directories and files
 .vscode/*
