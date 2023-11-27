@@ -19,6 +19,7 @@ import compressPlugin from "vite-plugin-compression";
 // 构建产物分析
 import { visualizer } from "rollup-plugin-visualizer";
 import manualChunks from "./.build/manualChunks";
+import { include, exclude } from "./.build/optimize";
 
 // import { ViteEnv } from "./types/env";
 
@@ -31,6 +32,10 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
   const isProd = configEnv.mode === "production";
 
   return {
+    optimizeDeps: {
+      include,
+      exclude,
+    },
     server: {
       // 端口
       port: 8888,

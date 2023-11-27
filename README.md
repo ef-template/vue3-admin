@@ -1,5 +1,5 @@
 # 项目简介
-一心堂后台通用模板（Vue3 + Element-Plus + Ts + Vite）
+后台通用模板（Vue3 + Element-Plus + Ts + Vite）
 
 # qiankun微应用名称配置
 修改.env文件VITE_MICROAPPNAME变量，务必和qiankun主应用名称保持一致。
@@ -17,11 +17,11 @@ pnpm i
 
 # 启动项目
 ```bash
-pnpm run dev
+pnpm dev
 ```
 # 构建项目
 ```bash
-pnpm run build
+pnpm build
 ```
 
 # 目录结构
@@ -96,7 +96,7 @@ pnpm run build
 准备commit代码时建议按照以下步骤执行
 1. git pull （如果出现冲突先执行git stash缓存本地代码，在git pull拉取代码，最后执行git stash pop弹出缓存并解决冲突文件后执行第2步骤）（或者借助vscode等编辑器处理冲突）
 2. git add .
-3. `pnpm run commit`
+3. `pnpm commit`
 4. git push
 
 # Element-Plus
